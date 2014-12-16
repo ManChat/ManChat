@@ -1,4 +1,6 @@
-package com.example.Activity;
+package com.Activity;
+
+import com.example.Activity.R;
 
 import android.app.Activity;
 import android.app.ActionBar;

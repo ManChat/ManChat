@@ -7,7 +7,7 @@
     android:orientation="horizontal"
     android:baselineAligned="false"
     android:weightSum="3"
-    tools:context="com.example.Activity.MenuActivity"
+    tools:context="com.Activity.MenuActivity"
     tools:ignore="MergeRootFrame" >
 
         <LinearLayout
@@ -17,7 +17,7 @@
             android:background="#9666f9"
             android:orientation="vertical"
             android:weightSum="4"
-            tools:context="com.example.Activity.MenuActivity"
+            tools:context="com.Activity.MenuActivity"
             tools:ignore="MergeRootFrame" >
             
             <LinearLayout
@@ -27,7 +27,7 @@
                 android:orientation="horizontal"
                 android:layout_gravity="center_horizontal"
                 android:weightSum="3"
-                tools:context="com.example.Activity.MenuActivity"
+                tools:context="com.Activity.MenuActivity"
                 tools:ignore="MergeRootFrame" >
 
             <ImageView
@@ -53,7 +53,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:orientation="vertical"
-                tools:context="com.example.Activity.MenuActivity"
+                tools:context="com.Activity.MenuActivity"
                 tools:ignore="MergeRootFrame" >
 
                 <ImageView

@@ -14,7 +14,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="com.example.Activity.LogInActivity"
+            android:name="com.Activity.LogInActivity"
             android:label="@string/app_name"
             android:screenOrientation="landscape"
             android:theme="@android:style/Theme.NoTitleBar" >
@@ -25,14 +25,14 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.Activity.RegisterActivity"
+            android:name="com.Activity.RegisterActivity"
             android:label="@string/RegisterActivityTitle"
             android:screenOrientation="landscape" >
         </activity>
         <activity
-            android:name="com.example.Activity.FunctionActivity"
+            android:name="com.Activity.FunctionActivity"
             android:label="@string/title_activity_function"
-            android:parentActivityName="com.example.Activity.LogInActivity"
+            android:parentActivityName="com.Activity.LogInActivity"
             android:screenOrientation="landscape"
             android:theme="@android:style/Theme.NoTitleBar" >
             <meta-data
@@ -40,17 +40,17 @@
                 android:value="com.example.Activity.LogInActivity" />
         </activity>
         <activity
-            android:name="com.example.Activity.MenuActivity"
+            android:name="com.Activity.MenuActivity"
             android:label="@string/title_activity_menu"
             android:screenOrientation="landscape"
             android:theme="@android:style/Theme.NoTitleBar" >
         </activity>
         <activity
-            android:name="com.example.Activity.PersonalSettings"
+            android:name="com.Activity.PersonalSettings"
             android:label="@string/title_activity_personal_settings" >
         </activity>
         <activity
-            android:name="com.example.Activity.Person_Info"
+            android:name="com.Activity.Person_Info"
             android:screenOrientation="landscape"
             android:label="@string/title_activity_person__info" >
         </activity>

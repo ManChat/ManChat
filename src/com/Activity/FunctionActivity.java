@@ -1,4 +1,6 @@
-package com.example.Activity;
+package com.Activity;
+
+import com.example.Activity.R;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -8,40 +10,29 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
-import android.widget.TextView;
 
-public class LogInActivity extends Activity {
-	private TextView Register;
-	private Button   LogIn;
+public class FunctionActivity extends Activity {
+	private Button WriteMessage;
 
-	/*private void initView() {
-		Register = (TextView) findViewById(R.id.Register);
+	private void initView() {
+		WriteMessage = (Button) findViewById(R.id.WriteMessage);
+
 	}
-*/
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_log_in);
-		Register = (TextView) findViewById(R.id.Register);
-		LogIn    = (Button) findViewById(R.id.LogIn);
-		// ÉèÖÃµÇÂ½°´Å¥¼àÊÓÆ÷
-		LogIn.setOnClickListener(new OnClickListener(){
-			public void onClick(View v){
-				Intent intent = new Intent();
-				intent.setClass(LogInActivity.this, MenuActivity.class);
-				startActivity(intent);
-			}
-		});
-		// ÉèÖÃ×¢²á¼àÌýÆ÷
-		Register.setOnClickListener(new OnClickListener() {
-
+		setContentView(R.layout.activity_function);
+		
+		
+		initView();
+		
+		WriteMessage.setOnClickListener(new OnClickListener() {
+			
 			@Override
 			public void onClick(View v) {
-				// TODO Auto-generated method stub
-				Intent intent = new Intent(LogInActivity.this,
-						RegisterActivity.class);
-				startActivity(intent);
-
+				Intent intent = new Intent(FunctionActivity.this,RegisterActivity.class);
+				
 			}
 		});
 	}
@@ -49,7 +40,7 @@ public class LogInActivity extends Activity {
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.log_in, menu);
+		getMenuInflater().inflate(R.menu.function, menu);
 		return true;
 	}
 

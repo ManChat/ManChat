@@ -7,6 +7,7 @@ import android.graphics.Bitmap;
 
 public class User {
 	public String ID;// 用户ID
+	public String passWord;//用户密码
 	public String date;// 注册日期
 	public String UserName;// 用户昵称
 	public String address;// 地址

@@ -1,6 +1,8 @@
-package com.example.Activity;
+package com.Activity;
 
 import org.w3c.dom.Text;
+
+import com.example.Activity.R;
 
 import android.app.Activity;
 import android.content.Intent;
