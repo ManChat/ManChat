@@ -16,24 +16,25 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.Activity.R;
-import com.userBase.User;
+import com.useFileInSD.*;
 
+;
 public class LogInActivity extends Activity {
 	private TextView Register;
 	private Button LogIn;
 	private EditText UserAccountEd;
 	private EditText PassWordEd;
-	private ImageView UserImg;
-
 	public String ID;// 用户ID
 	public String PassWord;// 用户密码
 
-	// boolean ifLogSuccess;
+	boolean ifLogSuccess = true;// 登陆成功标记
 
 	SharedPreferences preference;
 	SharedPreferences.Editor LogEditor;
+	Bundle IdDate;
 
 	/*
 	 * private void initView() { Register = (TextView)
@@ -45,17 +46,31 @@ public class LogInActivity extends Activity {
 		setContentView(R.layout.activity_log_in);
 		// 初始化View
 		initView();
+
 		// 设置登陆按钮监视器
 		LogIn.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
+				ID = UserAccountEd.getText().toString();
+				IdDate = new Bundle();
+				IdDate.putSerializable("ID", ID);
 				// 用于登陆函数中
 				// ID = UserAccountEd.getText().toString();
 				// PassWord = PassWordEd.getText().toString();
 				// ifLogSuccess = Login(ID, PassWord);
-				Intent intent = new Intent();
+				// 判断是否登陆成功，成功则跳转，失败则报错
+				if (ifLogSuccess) {
+					Toast.makeText(LogInActivity.this, "离线登陆成功,ID:" + ID, 3000)
+							.show();
+					Intent intent = new Intent(LogInActivity.this,
+							MenuActivity.class);
+					intent.putExtras(IdDate);
 
-				intent.setClass(LogInActivity.this, MenuActivity.class);
-				startActivity(intent);
+					startActivity(intent);
+				} else {
+					Toast.makeText(LogInActivity.this, "登陆失败，请检查账户和密码是否正确",
+							3000).show();
+
+				}
 			}
 		});
 		// 设置注册监听器
@@ -63,8 +78,6 @@ public class LogInActivity extends Activity {
 
 			@Override
 			public void onClick(View v) {
-				// 判断是否登陆成功，成功则跳转，失败则报错
-				// if(ifLogSuccess){}
 				Intent intent = new Intent(LogInActivity.this,
 						RegisterActivity.class);
 				startActivity(intent);
@@ -98,19 +111,10 @@ public class LogInActivity extends Activity {
 		PassWordEd = (EditText) findViewById(R.id.PassWord);
 	}
 
-	public void transmitToMenuActivity() {
-		Bundle UserImgBun = new Bundle();
-		Bundle ID = new Bundle();
-		Drawable UserBit = UserImg.getDrawable();
-		// 将用户头像和ID用Bundle发送到MenuActivity中
-		UserImgBun.putSerializable("UserImg", (Serializable) UserBit);
-
-	}
 	// 登陆函数，传送两个变量ID和PassWord到服务器,登陆成功返回true，失败返回false
-	/*
-	 * public boolean Login(String ID, String PassWord){
-	 * 
-	 * }
-	 */
+	//
+	// public boolean Login(String ID, String PassWord) {
+	//
+	// }
 
 }

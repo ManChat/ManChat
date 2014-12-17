@@ -4,102 +4,99 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#ffffff"
-    android:orientation="horizontal"
     android:baselineAligned="false"
+    android:orientation="horizontal"
     android:weightSum="3"
     tools:context="com.Activity.MenuActivity"
     tools:ignore="MergeRootFrame" >
 
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="#9666f9"
+        android:orientation="vertical"
+        android:weightSum="4"
+        tools:context="com.Activity.MenuActivity"
+        tools:ignore="MergeRootFrame" >
+
         <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_width="150dp"
+            android:layout_height="0dp"
+            android:layout_gravity="center_horizontal"
             android:layout_weight="1"
-            android:background="#9666f9"
-            android:orientation="vertical"
-            android:weightSum="4"
+            android:orientation="horizontal"
             tools:context="com.Activity.MenuActivity"
             tools:ignore="MergeRootFrame" >
-            
-            <LinearLayout
-                android:layout_width="150dp"
-                android:layout_height="0dp"
-                android:layout_weight="0.98"
-                android:orientation="horizontal"
-                android:layout_gravity="center_horizontal"
-                android:weightSum="3"
-                tools:context="com.Activity.MenuActivity"
-                tools:ignore="MergeRootFrame" >
 
             <ImageView
-                android:id="@+id/imageView6"
+                android:id="@+id/UserImg"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:layout_gravity="center_vertical"
                 android:layout_marginTop="3dp"
+                android:layout_weight="1"
                 android:src="@drawable/default_head" />
 
             <TextView
-                android:id="@+id/textView1"
-                android:layout_weight="2"
+                android:id="@+id/UserName"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="3dp"
+                android:layout_weight="2"
                 android:text="@string/HelloSir" />
-            </LinearLayout>
-            <LinearLayout
-                android:layout_weight="3"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:orientation="vertical"
-                tools:context="com.Activity.MenuActivity"
-                tools:ignore="MergeRootFrame" >
-
-                <ImageView
-                    android:id="@+id/imageView1"
-                    android:layout_weight="1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="0dp"
-                    android:layout_marginTop="3dp"
-                    android:src="@drawable/receive_mail" />
-
-                <ImageView
-                    android:id="@+id/imageView2"
-                    android:layout_weight="1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="0dp"
-                    android:layout_marginTop="3dp"
-                    android:src="@drawable/writing_mail" />
-
-                <ImageView
-                    android:id="@+id/imageView3"
-                    android:layout_weight="1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="0dp"
-                    android:layout_marginTop="3dp"
-                    android:src="@drawable/writing_card" />
-
-                <ImageView
-                    android:id="@+id/imageView4"
-                    android:layout_weight="1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="0dp"
-                    android:layout_marginTop="3dp"
-                    android:src="@drawable/writing_wishingcard" />
-
-                <ImageView
-                    android:id="@+id/imageView5"
-                    android:layout_width="wrap_content"
-                    android:layout_height="0dp"
-                    android:layout_marginTop="3dp"
-                    android:layout_weight="1"
-                    android:layout_marginBottom="3dp"
-                    android:src="@drawable/she_zhi" />
-                
-                </LinearLayout>
-
         </LinearLayout>
 
-</LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="3"
+            android:orientation="vertical"
+            tools:context="com.Activity.MenuActivity"
+            tools:ignore="MergeRootFrame" >
 
+            <ImageButton
+                android:id="@+id/receive_mail"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_marginTop="3dp"
+                android:layout_weight="1"
+                android:src="@drawable/receive_mail" />
+
+            <ImageButton
+                android:id="@+id/writing_mail"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_marginTop="3dp"
+                android:layout_weight="1"
+                android:src="@drawable/writing_mail" />
+
+            <ImageButton
+                android:id="@+id/writing_card"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_marginTop="3dp"
+                android:layout_weight="1"
+                android:src="@drawable/writing_card" />
+
+            <ImageButton
+                android:id="@+id/writing_wishingcard"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_marginTop="3dp"
+                android:layout_weight="1"
+                android:src="@drawable/writing_wishingcard" />
+
+            <ImageButton
+                android:id="@+id/setting_menu"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_marginBottom="3dp"
+                android:layout_marginTop="3dp"
+                android:layout_weight="1"
+                android:src="@drawable/setting_menu" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

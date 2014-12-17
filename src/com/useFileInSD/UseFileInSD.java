@@ -12,12 +12,11 @@ import android.os.Environment;
 
 public class UseFileInSD {
 
-	public String FILE_ROOT = "/ManChat";
-	public String FILE_UserHeadImg = "/UserHeadImg";
+	public static String FILE_ROOT = "/ManChat";
+	public static String FILE_UserHeadImg = "/UserHeadImg";
 
 	// 判断是否含有SD卡
-	// 插入注释测试Git
-	public boolean ifHasSD() {
+	public static boolean ifHasSD() {
 		if (Environment.getExternalStorageState().equals(
 				Environment.MEDIA_MOUNTED))
 			return true;
@@ -26,7 +25,7 @@ public class UseFileInSD {
 	}
 
 	// 向SD卡中存入用户的头像，传入参数位Drawable和FileName
-	public void saveUserHeadImg(Drawable UserHeadImg, String FileName)
+	public static void saveUserHeadImg(Drawable UserHeadImg, String FileName)
 			throws Exception {
 		File file = new File(FILE_ROOT + FILE_UserHeadImg, FileName);
 		FileOutputStream fos = null;
