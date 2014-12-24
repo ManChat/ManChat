@@ -30,7 +30,8 @@
     <string name="title_activity_person__info">Person_Info</string>
     <string name="HelloSir">&#160;&#160;你好！\n &#160;&#160;</string>
     <string name="Back_personalinfo">&#060;返回</string>
-
-    
+    <string name="title_activity_send_mail">SendMailActivity</string>
+    <string name="addressee">收件人：</string>
+    <string name="title_activity_mail_box">MailBoxActivity</string>
 
 </resources>

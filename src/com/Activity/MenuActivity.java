@@ -14,6 +14,7 @@ import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -26,7 +27,7 @@ import com.useFileInSD.*;
 public class MenuActivity extends Activity {
 	public ImageView UserImg;
 	public TextView UserName;
-	public ImageButton ReceiveMail;
+	public ImageButton MyMailBox;
 	public ImageButton WritingMail;
 	public ImageButton WritingCard;
 	public ImageButton WritingWishingCrad;
@@ -34,6 +35,8 @@ public class MenuActivity extends Activity {
 
 	private Drawable UserImgDraw;
 	private boolean ifHasSD;
+
+	private UseFileInSD fileInSD;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -43,21 +46,41 @@ public class MenuActivity extends Activity {
 		Intent intent = getIntent();
 		String ID = (String) intent.getSerializableExtra("ID");
 		UserImgDraw = getUserImg(ID);
-		UserName.setText(getString(R.string.HelloSir)+ID);
-		ifHasSD = UseFileInSD.ifHasSD();
+		UserName.setText(getString(R.string.HelloSir) + ID);
+		fileInSD = new UseFileInSD();
+		ifHasSD = fileInSD.ifHasSD();
 		try {
-			UseFileInSD.saveUserHeadImg(UserImgDraw,ID+"headImg");
+			fileInSD.saveUserHeadImg(UserImgDraw, ID + "headImg");
 		} catch (Exception e) {
-			Toast.makeText(MenuActivity.this, "SD卡不存在，加载用户头像失败", 3000);
 			e.printStackTrace();
 		}
+		WritingMail.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent(MenuActivity.this,
+						SendMailActivity.class);
+				startActivity(intent);
+			}
+		});
+
+		MyMailBox.setOnClickListener(new OnClickListener() {
+
+			@Overridess
+			public void onClick(View v) {
+				Intent intent = new Intent(MenuActivity.this,
+						MailBoxActivity.class);
+				startActivity(intent);
+			}
+		});
+
 	}
 
 	// 初始化View
 	private void intiView() {
 		UserImg = (ImageView) findViewById(R.id.UserImg);
 		UserName = (TextView) findViewById(R.id.UserName);
-		ReceiveMail = (ImageButton) findViewById(R.id.receive_mail);
+		MyMailBox = (ImageButton) findViewById(R.id.my_mail_box);
 		WritingMail = (ImageButton) findViewById(R.id.writing_mail);
 		WritingCard = (ImageButton) findViewById(R.id.writing_card);
 		WritingWishingCrad = (ImageButton) findViewById(R.id.writing_wishingcard);

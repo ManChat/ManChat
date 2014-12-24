@@ -56,9 +56,7 @@ public class RegisterActivity extends Activity {
 
 			@Override
 			public void onClick(View v) {
-				Intent intent = new Intent(RegisterActivity.this,
-						LogInActivity.class);
-				startActivity(intent);
+				finish();
 
 				// TODO Auto-generated method stub
 
