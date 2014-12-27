@@ -6,20 +6,31 @@
     android:gravity="center_horizontal"
     android:orientation="horizontal"
     android:weightSum="3" >
+    <ScrollView 
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content">
 
     <LinearLayout
         android:id="@+id/RegisterLiear"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:orientation="vertical" >
 
         <EditText
-            android:id="@+id/RegisterUserID"
+            android:id="@+id/RegisterUserTel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/RegisterUserId"
             android:textSize="@dimen/small" />
+
+        <EditText
+            android:id="@+id/RegisterUserName"
+            android:layout_width="match_parent"
+            android:hint="@string/RegisterUserName"
+            android:textSize="@dimen/small"
+            android:layout_height="wrap_content" />
 
         <EditText
             android:id="@+id/RegisterPassWord"
@@ -73,5 +84,6 @@
                 android:textSize="@dimen/small" />
         </LinearLayout>
     </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>

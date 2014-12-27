@@ -1,7 +1,7 @@
 package com.Activity;
 
 
-import com.example.Activity.R;
+import com.Activity.R;
 
 import android.app.Activity;
 import android.os.Bundle;

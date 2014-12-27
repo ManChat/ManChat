@@ -21,7 +21,7 @@ import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.Activity.MenuActivity;
-import com.example.Activity.R;
+import com.Activity.R;
 import com.useFileInSD.UseFileInSD;
 
 public class SendMailActivity extends Activity {

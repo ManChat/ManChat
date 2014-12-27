@@ -8,6 +8,7 @@
     android:orientation="horizontal"
     android:weightSum="3"
     tools:context="com.Activity.LogInActivity" >
+ 
 
     <LinearLayout
         android:id="@+id/LogoLinear"
@@ -44,14 +45,6 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal" >
 
-            <CheckBox
-                android:id="@+id/IfSave"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/IfSavePassWord"
-                android:textSize="@dimen/tiny" />
-
             <TextView
                 android:id="@+id/Register"
                 android:layout_width="wrap_content"
@@ -61,5 +54,4 @@
                 android:textSize="@dimen/tiny" />
         </LinearLayout>
     </LinearLayout>
-
 </LinearLayout>

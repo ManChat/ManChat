@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.Activity"
+    package="com.Activity"
     android:versionCode="1"
     android:versionName="1.0" >
 
@@ -22,11 +22,6 @@
             android:launchMode="singleTop"
             android:screenOrientation="landscape"
             android:theme="@android:style/Theme.NoTitleBar" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name="com.Activity.RegisterActivity"
@@ -77,6 +72,35 @@
             android:label="@string/title_activity_mail_box"
             android:screenOrientation="landscape"
             android:theme="@android:style/Theme.NoTitleBar" >
+        </activity>
+        <activity
+            android:name="com.Activity.UserNameCard"
+            android:label="@string/title_activity_user_name_card" >
+        </activity>
+        <activity
+            android:name="com.Activity.UserInfo"
+            android:label="@string/title_activity_user_info" >
+        </activity>
+        <activity
+            android:name="com.Activity.PersonDetial"
+            android:label="@string/title_activity_person_detial" >
+        </activity>
+        <activity
+            android:name="com.Activity.PersonDetail"
+            android:label="@string/title_activity_person_detail"
+            android:screenOrientation="landscape"
+            android:theme="@android:style/Theme.NoTitleBar" >
+        </activity>
+        <activity
+            android:name="com.Activity.Welcome"
+            android:label="@string/app_name"
+            android:screenOrientation="landscape"
+            android:theme="@android:style/Theme.NoTitleBar" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
     </application>
 

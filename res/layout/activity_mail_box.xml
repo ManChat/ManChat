@@ -24,7 +24,7 @@
             android:layout_width="wrap_content"
             android:layout_height="0dp"
             android:layout_marginTop="3dp"
-            android:layout_weight="1"
+            android:layout_weight="1.01"
             android:background="@drawable/selector_back_to_menu" />
 
         <ImageButton
@@ -32,7 +32,7 @@
             android:layout_width="wrap_content"
             android:layout_height="0dp"
             android:layout_marginTop="3dp"
-            android:layout_weight="1"
+            android:layout_weight="1.03"
             android:background="@drawable/selector_sr_box" />
 
         <ImageButton

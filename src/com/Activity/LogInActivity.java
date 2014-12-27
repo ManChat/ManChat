@@ -18,24 +18,24 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.Activity.R;
+import com.Activity.R;
 import com.useFileInSD.*;
 
 ;
 public class LogInActivity extends Activity {
 	private TextView Register;
 	private Button LogIn;
-	private EditText UserAccountEd;
-	private EditText PassWordEd;
-	public String ID;// 用户ID
-	public String PassWord;// 用户密码
+	private EditText UT;
+	private EditText PassWord;
+	public String Tel;// 用户ID
+	public String PW;// 用户密码
+	
+	private SharedPreferences SP;
 
 	boolean ifLogSuccess = true;// 登陆成功标记
 
 	SharedPreferences preference;
 	SharedPreferences.Editor LogEditor;
-	Bundle IdDate;
-
 	/*
 	 * private void initView() { Register = (TextView)
 	 * findViewById(R.id.Register); }
@@ -44,35 +44,32 @@ public class LogInActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_log_in);
-		// 初始化View
-		initView();
+		Register = (TextView) findViewById(R.id.Register);
+		LogIn = (Button) findViewById(R.id.LogIn);
+		UT = (EditText)findViewById(R.id.UserAccount);
+		PassWord = (EditText)findViewById(R.id.PassWord);
+		SP=getSharedPreferences("User", MODE_WORLD_WRITEABLE);
 
 		// 设置登陆按钮监视器
 		LogIn.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
-				ID = UserAccountEd.getText().toString();
-				IdDate = new Bundle();
-				IdDate.putSerializable("ID", ID);
-				// 用于登陆函数中
-				// ID = UserAccountEd.getText().toString();
-				// PassWord = PassWordEd.getText().toString();
-				// ifLogSuccess = Login(ID, PassWord);
-				// 判断是否登陆成功，成功则跳转，失败则报错
-				if (ifLogSuccess) {
-					Toast.makeText(LogInActivity.this, "离线登陆成功,ID:" + ID, 3000)
-							.show();
-					Intent intent = new Intent(LogInActivity.this,
-							MenuActivity.class);
-					intent.putExtras(IdDate);
-
-					startActivity(intent);
-				} else {
-					Toast.makeText(LogInActivity.this, "登陆失败，请检查账户和密码是否正确",
-							3000).show();
-
+				Tel = UT.getText().toString();
+				PW = PassWord.getText().toString();
+				if(Tel.equals(SP.getString("Tel", null))&&PW.equals(SP.getString("PW", null))){
+					Toast t = Toast.makeText(LogInActivity.this, "登陆成功:)", 100);
+					t.show();
+					Intent i = new Intent();
+					i.setClass(LogInActivity.this,MenuActivity.class );
+					startActivity(i);
+					LogInActivity.this.finish();
+					}
+				else{
+					Toast t = Toast.makeText(LogInActivity.this, "密码错误：（", 100);
+					t.show();
+					PassWord.setText("");
+					}
 				}
-			}
-		});
+			});
 		// 设置注册监听器
 		Register.setOnClickListener(new OnClickListener() {
 
@@ -103,18 +100,4 @@ public class LogInActivity extends Activity {
 		}
 		return super.onOptionsItemSelected(item);
 	}
-
-	public void initView() {
-		Register = (TextView) findViewById(R.id.Register);
-		LogIn = (Button) findViewById(R.id.LogIn);
-		UserAccountEd = (EditText) findViewById(R.id.UserAccount);
-		PassWordEd = (EditText) findViewById(R.id.PassWord);
-	}
-
-	// 登陆函数，传送两个变量ID和PassWord到服务器,登陆成功返回true，失败返回false
-	//
-	// public boolean Login(String ID, String PassWord) {
-	//
-	// }
-
 }
